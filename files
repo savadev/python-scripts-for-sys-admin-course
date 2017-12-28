@@ -1,0 +1,35 @@
+#!/bin/python
+
+#xmen_file = open('xmen.txt')
+#xmen_file = open('xmen.txt', 'r') -> default as above read operation
+
+## print by default adds a new line character at the end of string
+#for line in xmen_file:
+#    print(line)
+## print without new line characters
+#print (xmen_file.read())
+## close the file
+#xmen_file.close()
+### Write to file example
+#xmen_file = open('xmen1.txt', 'w')# -> file write operation -> will overwrite file as it would start cursor at the start of the file
+#xmen_file.write("Beast\n")
+#xmen_file.write("Phoenix\n")
+#xmen_file.close()
+
+### example to read and write to file r+ mode
+#import os
+#xmen_file = open('xmen.txt', 'r+')
+#xmen_file.seek(-1, os.SEEK_END) # -1 takes it to the very end of the file
+# xmen_file.seek(-1, 2) ## same as above 2 -> os.SEEKEND
+#xmen_file.write("\nBeast\n") # add a new line character
+#xmen_file.write("Phoenix\n")
+#xmen_file.close()
+
+###append mode
+#xmen_file = open('xmen.txt', 'a')
+#xmen_file.writelines(['Morph\n', 'Rogue\n'])
+#xmen_file.close()
+
+## to append to a file and open and close the file using 'with'
+with open('xmen.txt', 'a') as xmen_file:
+    xmen_file.write("Professor Xavier\n")

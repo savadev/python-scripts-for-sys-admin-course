@@ -1,0 +1,5 @@
+#!/bin/python
+
+import sys
+print("Script Name %s" % sys.argv[0])
+print("First argument %s" % sys.argv[1])

@@ -1,0 +1,23 @@
+#!/bin/python
+import argparse
+
+parser = argparse.ArgumentParser(description='Search for words including partial word')
+parser.add_argument('snippet', help='partial (or complete) string to search for in the words file')
+
+args = parser.parse_args()
+snippet = args.snippet.lower()
+## requires installation of the package 'words'
+words = open('/usr/share/dict/words').readlines()
+##
+## list comprehension in python
+#print([word for word in words if snippet in word.lower()])
+## remove new line character after each word
+print([word.strip() for word in words if snippet in word.lower()])
+## the above line makes the below 6 commented lines redunant
+#matches = []
+
+#for word in words:
+#    if snippet in word.lower():
+#      matches.append(word)
+
+#print(matches)

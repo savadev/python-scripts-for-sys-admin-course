@@ -1,0 +1,18 @@
+#!/usr/bin/python
+users = [
+    { 'admin': True, 'active': True, 'name': 'Kevin' },
+    { 'admin': False, 'active': True, 'name': 'Thomas' },
+    { 'admin': False, 'active': False, 'name': 'Tom' },
+    { 'admin': True, 'active': False, 'name': 'Jose' },
+]
+line = 1
+for user in users:
+    if user['active'] and user['admin']:
+        print("%s ACTIVE - (ADMIN) %s" % (line, user['name']))
+    elif user['admin']:
+        print("%s (ADMIN) - %s" % (line, user['name']))
+    elif user['active']:
+        print("%s ACTIVE - %s" % (line, user['name']))
+    else:
+        print("%s %s" % (line, user['name']))
+    line +=1

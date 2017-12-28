@@ -1,0 +1,13 @@
+#!/bin/python
+
+import os
+#os.environ works as a dictonary
+# stage = os.environ["STAGE"].upper()
+# getenv works as a function, and if the STAGE is NONE, can't be converted to upper and will fail, so setting default value as development
+stage = (os.getenv("STAGE") or "development").upper()
+output = "We're running in %s" % stage
+
+if stage.startswith("PROD"):
+    output = "DANGER!!! -" + output
+
+print (output)

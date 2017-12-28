@@ -1,0 +1,13 @@
+#!/usr/bin/python
+#user = { 'admin': True, 'active': True, 'name': 'Kevin' }
+user = { 'admin': False, 'active': True, 'name': 'Thomas' }
+#user = { 'admin': False, 'active': False, 'name': 'Tom' }
+#user = { 'admin': True, 'active': False, 'name': 'Jose' }
+if user['active'] and user['admin']:
+    print("ACTIVE - (ADMIN) %s" % user['name'])
+elif user['admin']:
+    print("(ADMIN) - %s" % user['name'])
+elif user['active']:
+    print("ACTIVE - %s" % user['name'])
+else:
+    print(user['name'])
